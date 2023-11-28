@@ -5,7 +5,8 @@ analysis) to analyze and characterize the relationships between different
 body part movements over time. The results, including visualizations and 
 computed metrics, are saved for further examination.
 
-contact: ynerpoe@gmail.com
+contact: noemigrinspun@gmail.com
+         ynerpoe@gmail.com
 %}
 
 clc;
