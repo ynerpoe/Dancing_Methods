@@ -1,4 +1,5 @@
-Contact: ynerpoe@gmail.com
+Contact:  noemigrinspun@gmail.com
+          ynerpoe@gmail.com 
 
 The MATLAB code performs several data processing and analysis tasks. Here's a description of the key functionalities:
 
