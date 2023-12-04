@@ -44,4 +44,4 @@ This script is part of a set of tools that allows the analysis of people's movem
 5.	Finally, use the Matlab code (Symchrony_dyad_analysis_new2.m) that combines data preprocessing, visualization, and advanced signal processing techniques (cross-correlation, wavelet coherence, and phase analysis) to analyze and characterize the relationships between movements of different body parts over time. The results, including visualizations and calculated metrics, are saved for further examination. This code is available at: https://github.com/ynerpoe/Dancing_Methods/blob/main/Symchrony_dyad_analysis_new2.m 
 
 
-
+If you have any questions, you can write to noemigrinspun@gmail.com or to ynerpoe@gmail.com
