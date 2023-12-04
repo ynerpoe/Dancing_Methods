@@ -1,5 +1,5 @@
 # Dancing_Methods
-The MATLAB code performs several data processing and analysis tasks. Here's a description of the key functionalities:
+The MATLAB code (Symchrony_dyad_analysis_new2.m) performs several data processing and analysis tasks. Here's a description of the key functionalities:
 
 1. Data Loading and Preprocessing:
 •	Reads a CSV file named "file_name.csv" into a table (`messyTable`).
