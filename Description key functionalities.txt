@@ -1,7 +1,7 @@
 Contact:  noemigrinspun@gmail.com
           ynerpoe@gmail.com 
 
-The MATLAB code (Symchrony_dyad_analysis_new2.m) performs several data processing and analysis tasks. Here's a description of the key functionalities:
+The MATLAB code (Synchrony_dyad_analysis_new2.m) performs several data processing and analysis tasks. Here's a description of the key functionalities:
 
 1. Data Loading and Preprocessing:
 * Reads a CSV file named "file_name.csv" into a table (`messyTable`).
