@@ -1,4 +1,4 @@
-Instructions
+To perform the complete analysis, you must follow the following instructions:
 
 1. First, capture video in MP4 format, which will be used in the subsequent analysis.
 
