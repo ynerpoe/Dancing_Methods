@@ -1,0 +1,105 @@
+library("jsonlite")
+library("rstudioapi")
+
+## READ IN JSON-FILES ##
+
+# set wd and list files in wd
+parentfolder <- (dirname(rstudioapi::getSourceEditorContext()$path))  #get current folder
+data_to_process <- parentfolder
+list_json <- data.frame(list.files(path = parentfolder, pattern = "*.json", all.files = FALSE,
+                                   full.names = FALSE, recursive = FALSE,
+                                   ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE))
+
+# body parts
+bodyparts <- cbind(c("Nose", "Neck", "RShoulder", "RElbow", "RWrist", "LShoulder", "LElbow", "LWrist", "MidHip", 
+                     "RHip", "RKnee", "RAnkle", "LHip", "LKnee", "LAnkle", "REye", "LEye", "REar", "LEar", "LBigToe",
+                     "LSmallToe", "LHeel", "RBigToe", "RSmallToe", "RHeel"))
+
+# prepare
+persons_all <- data.frame(frame_no=rep(1:nrow(list_json), each = 25),
+                          bodyparts=rep(bodyparts, nrow(list_json)),
+                          x_p1=rep(NA, nrow(list_json)*25),
+                          y_p1=rep(NA, nrow(list_json)*25),
+                          c_p1=rep(NA, nrow(list_json)*25))
+
+# persons_all <- data.frame(frame_no=rep(1:1000, each = 25),
+#                           bodyparts=rep(bodyparts, 1000),
+#                           x_p1=rep(NA, 1000*25),
+#                           y_p1=rep(NA, 1000*25),
+#                           c_p1=rep(NA, 1000*25))
+
+pb <- txtProgressBar(min = 0, max = nrow(list_json), style = 3) # normally max = nrow(list_json)
+
+for (n in 1:nrow(list_json)) { #normally nrow(list_json)
+  
+  setTxtProgressBar(pb, n)
+  
+  # read in data
+  file <- paste0(parentfolder, "/", as.character(list_json[n,1]))
+  json_file <- fromJSON(file)
+  
+  # extract data for the different people in de video
+  json_file_people <- json_file$people
+  
+  no_people <- nrow(json_file_people)
+  
+  if (length(json_file_people) == 0) {
+    
+    rm(file, json_file, json_file_people)
+    
+    next
+  }
+  
+  id_row_persons_all <- (n*25)-24
+  
+  for (x in 1:no_people) { 
+    
+    # extract x and y coordinates, and confidence-index for 25 different body parts
+    keypoints <- unlist(json_file_people$pose_keypoints_2d[x])
+    
+    keypoints_x <- keypoints[seq(1,75,3)]
+    keypoints_y <- keypoints[seq(2,75,3)]
+    keypoints_c <- keypoints[seq(3,75,3)]
+    
+    if(x == 1) {
+      persons_all[id_row_persons_all:(id_row_persons_all+24),3] <- keypoints_x
+      persons_all[id_row_persons_all:(id_row_persons_all+24),4] <- keypoints_y
+      persons_all[id_row_persons_all:(id_row_persons_all+24),5] <- keypoints_c
+    }
+    
+    if(x > 1) {
+      colnames_x_exist <- any(grepl(paste0("p", x), colnames(persons_all)))
+      
+      if(colnames_x_exist == F) {
+        new_cols <- data.frame(x_p=rep(NA, nrow(list_json)*25),
+                               y_p=rep(NA, nrow(list_json)*25),
+                               c_p=rep(NA, nrow(list_json)*25))
+        
+        # new_cols <- data.frame(x_p=rep(NA, 1000*25),
+        #                        y_p=rep(NA, 1000*25),
+        #                        c_p=rep(NA, 1000*25))
+        
+        colnames(new_cols) <- paste0(c("x_p", "y_p", "c_p"), x)
+        
+        persons_all <- cbind(persons_all, new_cols)
+        
+        rm(new_cols)
+      }
+      
+      persons_all[id_row_persons_all:(id_row_persons_all+24),x*3] <- keypoints_x
+      persons_all[id_row_persons_all:(id_row_persons_all+24),(x*3)+1] <- keypoints_y
+      persons_all[id_row_persons_all:(id_row_persons_all+24),(x*3)+2] <- keypoints_c
+      
+    }
+    
+    rm(keypoints, keypoints_x, keypoints_c, keypoints_y)
+  }
+  
+  rm(file, json_file, json_file_people, id_row_persons_all)
+}
+
+name_video <- strsplit(as.character(list_json[n,1]), "_0")[[1]][1]
+
+write.csv(persons_all, paste0(parentfolder, "/", name_video, "_openpose_2D_nohands_noface.csv"),
+          row.names = F)
+
