@@ -2,10 +2,8 @@
 Additionally, it incorporates an interactive mechanism to correct potential errors in the automatic assignment,
 thus providing greater accuracy in data processing.
 
-
+Script adapted from https://osf.io/6s73d/b
 "
-
-
 
 library("lpSolve")
 library("circular")
@@ -51,8 +49,7 @@ func_remove_col0 <- function(x) {
     x
   } else if(sum(as.numeric(x)) == 0) { 
     rep(NA, length(x))
-    # } else if (length(which(which(x == 0) == T) == 24)) {
-    #     rep(NA, length(x))
+    
   }
   else {
     x
