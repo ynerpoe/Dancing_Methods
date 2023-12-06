@@ -3,6 +3,7 @@ Additionally, it incorporates an interactive mechanism to correct potential erro
 thus providing greater accuracy in data processing.
 
 Script adapted from https://osf.io/6s73d/b
+Author: Lisette de Jonge-Hoekstra, lisette.hoekstra@rug.nl, www.lisettedejongehoekstra.com
 "
 
 library("lpSolve")
