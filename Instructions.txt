@@ -8,7 +8,7 @@ two XY coordinates and a confidence coordinate (C) indicating the confidence lev
 Thus, each point of interest is P(x, y, c). General instructions for using Openpose can be found at the following link:
 https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
-3. Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://osf.io/6s73d/ 
+3. Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://github.com/ynerpoe/Dancing_Methods/tree/main/R%20scripts
 
 4. Once the CSV file with the 25 available points is obtained, select the point of interest for analysis. 
 This point represents the body part whose movement is of interest for analysis. 
