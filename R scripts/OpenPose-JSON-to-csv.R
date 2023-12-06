@@ -6,6 +6,9 @@
  This data is then organized into a structured format and saved to a CSV file. 
  The script can be used to process multiple JSON files, 
  generating a collection of CSV files containing pose data for various individuals and videos.
+
+ Script adapted from https://osf.io/6s73d/
+
 "
 
 library("jsonlite")
