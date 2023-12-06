@@ -37,7 +37,7 @@ This script is part of a set of tools that allows the analysis of people's movem
 
 2.	Next, use the Openpose code that, based on the video captured in the previous step, generates an output file in JSON format, containing coordinates for 25 points, including: head, chest, hands, feet, knees, hips, shoulders, etc. Each point is associated with three parameters: two XY coordinates and a confidence coordinate (C) indicating the confidence level of obtaining the XY coordinates. Thus, each point of interest is P(x, y, c). General instructions for using Openpose can be found at the following link: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
-3.	Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://osf.io/ybezd
+3.	Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://osf.io/6s73d/
 
 4.	Once the CSV file with the 25 available points is obtained, select the point of interest for analysis. This point represents the body part whose movement is of interest for analysis. From this, you have to generate a CSV file with the data in columns arranged in the same order as the selected point.
 
