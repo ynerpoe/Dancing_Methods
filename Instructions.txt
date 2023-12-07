@@ -18,6 +18,6 @@ From this, you have to generate a CSV file with the data in columns arranged in 
 5. Finally, use the Matlab code (Synchrony_dyad_analysis_new2.m) that combines data preprocessing, visualization, 
 and advanced signal processing techniques (cross-correlation, wavelet coherence, and phase analysis) to analyze 
 and characterize the relationships between movements of different body parts over time. 
-The results, including visualizations and calculated metrics, are saved for further examination.
+The results, including visualizations and calculated metrics, are saved for further examination (see Figure 2 and Figure 3 in the "Results" folder)
 This code is available at: https://github.com/ynerpoe/Dancing_Methods/blob/main/Synchrony_dyad_analysis_new2.m 
 
