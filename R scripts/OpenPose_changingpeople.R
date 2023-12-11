@@ -2,8 +2,9 @@
 Additionally, it incorporates an interactive mechanism to correct potential errors in the automatic assignment,
 thus providing greater accuracy in data processing.
 
-Script adapted from https://osf.io/6s73d/b
-Author: Lisette de Jonge-Hoekstra, lisette.hoekstra@rug.nl, www.lisettedejongehoekstra.com
+ Authors: 
+ de Jonge-Hoekstra, L., & Repgen, M. H. (2020).I like to move it, move it: Package for social scientists who want to use OpenPose.
+ Interdisciplinary Inspiration BSS Symposium, Groningen, Netherlands. https://doi.org/10.17605/OSF.IO/6S73D
 "
 
 library("lpSolve")
