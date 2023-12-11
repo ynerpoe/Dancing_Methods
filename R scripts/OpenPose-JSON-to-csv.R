@@ -7,8 +7,9 @@
  The script can be used to process multiple JSON files, 
  generating a collection of CSV files containing pose data for various individuals and videos.
 
- Script adapted from https://osf.io/6s73d/
- Author: Lisette de Jonge-Hoekstra, lisette.hoekstra@rug.nl, www.lisettedejongehoekstra.com 
+ Authors: 
+ de Jonge-Hoekstra, L., & Repgen, M. H. (2020).I like to move it, move it: Package for social scientists who want to use OpenPose.
+ Interdisciplinary Inspiration BSS Symposium, Groningen, Netherlands. https://doi.org/10.17605/OSF.IO/6S73D
 "
 
 library("jsonlite")
