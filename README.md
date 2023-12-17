@@ -34,22 +34,23 @@ The MATLAB code (Synchrony_dyad_analysis_new2.m) performs several data processin
 
 This script is part of a set of tools that allows the analysis of people's movements based on previously recorded videos. To perform the complete analysis, you must follow the following instructions:
 
-1. First, capture the video in MP4 format, which will be used in the subsequent analysis (see the "Videos_examples" folder).
+1. First, capture the video in MP4 format, which will be used in the subsequent analysis (see the "Videos_examples" folder.
+   The Video_example_dyad.mp4 is just an example, the actual videos involve mothers and their preschool children).
 
-2. Next, use the Openpose code that, based on the video captured in the previous step, generates an output file in JSON format, 
+3. Next, use the Openpose code that, based on the video captured in the previous step, generates an output file in JSON format, 
 containing coordinates for 25 points, including head, chest, hands, feet, knees, hips, shoulders, etc. Each point is associated with three parameters:
 two XY coordinates and a confidence coordinate (C) indicating the confidence level of obtaining the XY coordinates. 
 Thus, each point of interest is P(x, y, c) (see JSON_files.zip in the "Results" folder).
 General instructions for using Openpose can be found at the following link: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
-3. Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://github.com/ynerpoe/Dancing_Methods/tree/main/R%20scripts
+4. Subsequently, convert the Openpose JSON files to a CSV file using the R code available at https://github.com/ynerpoe/Dancing_Methods/tree/main/R%20scripts
 
-4. Once the CSV file with the 25 available points is obtained, select the point of interest for analysis. 
+5. Once the CSV file with the 25 available points is obtained, select the point of interest for analysis. 
 This point represents the body part whose movement is of interest for analysis. 
 From this, you have to generate a CSV file with the data in columns arranged in the same 
 order as the selected point (see the CSV files in the "Results" folder)
 
-5. Finally, use the Matlab code (Synchrony_dyad_analysis_new2.m) that combines data preprocessing, visualization, 
+6. Finally, use the Matlab code (Synchrony_dyad_analysis_new2.m) that combines data preprocessing, visualization, 
 and advanced signal processing techniques (cross-correlation, wavelet coherence, and phase analysis) to analyze 
 and characterize the relationships between movements of different body parts over time. 
 The results, including visualizations and calculated metrics, are saved for further examination (see Figure 2 and Figure 3 in the "Results" folder)
