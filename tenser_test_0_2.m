@@ -47,7 +47,6 @@ strong synchrony, while a more circular distribution indicates weaker
 synchrony. On the other hand, the angle between the distribution’s major 
 axis and the real axis of the complex plane provides an aggregate measure 
 of the mutual phase difference between the multivariate time series."
-
 by YnerPoe
 %}
 
@@ -137,9 +136,7 @@ else
 
     %S1_n1 = fillmissing (S1_n,'nearest');
     S1_n1 = fillmissing(S1_n, 'linear');
-    
-    
-    
+           
     missingElements1 = ismissing(S2_n)
     rowsWithMissingValues1 = any(missingElements1,2)
     missingValuesTable1 = S2_n(rowsWithMissingValues1,:)
@@ -164,9 +161,7 @@ else
     save mag
      mean_mag = mean(mag(:)); % average over all time points
         save mean_mag;
-    
-    
-    
+        
     % Plots
     
     figure(1);
